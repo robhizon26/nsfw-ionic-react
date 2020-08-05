@@ -63,7 +63,6 @@ class App extends Component {
   }
 
   _onChange = ({ value }) => {
-    // this.setState({ currentModelName: value }, this._loadModel);
     this._loadModel(value);
   };
 
@@ -197,7 +196,6 @@ class App extends Component {
     if (rejected && rejected.length > 0) {
       window.alert("JPG, PNG, GIF only plz");
     } else {
-      // console.log("onDropDetail");
       this.onDropDetail(accepted[0]);
     }
   };
@@ -222,15 +220,11 @@ class App extends Component {
       resultType: CameraResultType.Base64
     })
       .then((image) => {
-        // console.log("Capacitor then");
-        // this.setState({ showModal: true });
         const selectedCamImage = "data:image/jpeg;base64," + image.base64String;
         this.selectedCamImage = selectedCamImage;
         this.setState({ showModal: true ,isLoadingImage:false});
       })
       .catch((error) => {
-        // console.log("Capacitor error", error);
-        // this.setState({ showModal: false });
         this.inputRef.current.click();
         return false;
       });
@@ -319,8 +313,6 @@ class App extends Component {
       />
     );
 
- 
-
     return (
       <>
         {this.state.enableWebcam &&
@@ -367,9 +359,7 @@ class App extends Component {
     this.setState({ showModal });
   };
   _setImage = (image) => {
-    // console.log('_setImage',image)
    const newImage = image||  this.selectedCamImage;
-  //  console.log('_setImage',newImage)
     this.setState(
       { graphic: newImage, fileType: "image/jpeg, showModal:false", showModal: false },
       this.checkContent

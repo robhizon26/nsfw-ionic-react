@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import MApp from './MApp';
 import * as serviceWorker from './serviceWorker';
-import TApp from './TApp';
-import BApp from './BApp';
 // import '@ionic/pwa-elements';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 

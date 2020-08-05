@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { useState } from "react";
 import {
   IonModal,
   IonButton,
@@ -36,14 +36,12 @@ const CropEditModal = (props) => {
     setCrop(crop);
   };
   const makeClientCrop = async (crop) => {
-    // console.log("imageRef", imageRef);
     if (imageRef && crop.width && crop.height) {
       const croppedImageUrl = await getCroppedImg(
         imageRef,
         crop,
         "newFile.jpeg"
       );
-      // console.log('makeClientCrop',croppedImageUrl)
       setCroppedImageUrl(croppedImageUrl);
     }
   };
@@ -70,30 +68,12 @@ const CropEditModal = (props) => {
     // As Base64 string
     const base64Image = canvas.toDataURL("image/jpeg");
     return base64Image;
-
-    // return new Promise((resolve, reject) => {
-    //   canvas.toBlob(
-    //     (blob) => {
-    //       if (!blob) {
-    //         //reject(new Error('Canvas is empty'));
-    //         reject("Canvas is empty");
-    //         return;
-    //       }
-    //       blob.name = fileName;
-    //       const fileUrl = window.URL.createObjectURL(blob);
-    //       blob.url = fileUrl;
-    //       resolve(blob);
-    //     },
-    //     "image/jpeg",
-    //     1
-    //   );
-    // });
   };
 
   const setImageOnParent = () => {
-    // console.log("setImageOnParent croppedImageUrl", croppedImageUrl);
     props.setImageOnParent(croppedImageUrl);
   };
+
   return (
     <>
       <IonContent>
@@ -101,7 +81,6 @@ const CropEditModal = (props) => {
           <IonHeader>
             <IonToolbar color="primary" class="ion-toolbar">
               <IonButtons slot="start">
-                {/* <IonButton onClick={() => props.setShowModal(falssetShowModale)}> */}
                 <IonButton onClick={props.setShowModal.bind(this, false)}>
                   <IonIcon slot="icon-only" icon={arrowBackOutline} />
                 </IonButton>
@@ -123,7 +102,6 @@ const CropEditModal = (props) => {
               onChange={onCropChange}
             />
           )}
-          {/* <img src={props.image} alt="" className="dropped-photo" /> */}
         </IonModal>
       </IonContent>
     </>
