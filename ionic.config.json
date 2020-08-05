@@ -1,0 +1,7 @@
+{
+  "name": "NSFWIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
