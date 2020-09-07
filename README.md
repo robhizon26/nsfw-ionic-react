@@ -1,4 +1,4 @@
-NSFW JS is originally from [Infinite Red](https://infinite.red/). I wrapped the [web app](https://nsfwjs.com/) using Ionic React so that I can use the device camera seamlessly
+NSFW JS is originally from [Infinite Red](https://infinite.red/). I wrapped the [web app](https://nsfwjs.com/) using Ionic React so that I can use the device camera seamlessly. I also added a small functionality to crop the photo taken by the camera.
 
 NSFW(Not Safe for Work) JS is a React app that uses TensorflowJS (hence the suffix JS) to classify images if it safe to view at work or not. This is particularly checking on pornography images.
 
